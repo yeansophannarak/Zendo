@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Helvetica Neue", sans-serif ;
+    src: url(./font/HelveticaNeueRoman.otf) format("opentype");
+}
+
+:root{
+    --main-color : black;
+    --bg-color : white;
+    --pink-color : #FF66A6;
+    --main-font : "Helvetica Neue", sans-serif; 
+}
+header{
+    padding-block: 6px;
+    display: flex;
+    align-items: center;
+    padding-inline: 100px;
+    border-bottom: 0.7px solid gray;
+}
+header .menu{
+    width: 40%;
+}
+header .menu ul{
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+    background-color: var(--bg-color);
+}
+header .menu ul li a{
+    color: var(--main-color);
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: 17px;
+    position: relative;
+}
+header .menu ul li a::before{
+    content: "";
+    height: 1px;
+    width: 0;
+    background-color: var(--main-color);
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transition: 300ms all ease-in-out;
+}
+header .menu ul li:first-child a::before{
+    width: 100%;
+}
+header .menu ul li a:hover::before{
+    width: 100%;
+}
+header .menu ul li #a::before{
+    background-color: var(--pink-color);
+}
+header .menu ul li #a:hover::before{
+    width: 100%;
+    background-color: var(--pink-color);
+}
+header .menu ul li #a{
+    color: var(--pink-color);
+}
+
+header .logo{
+    width: 20%;
+    justify-content: center;
+    display: flex;
+}
+header .logo img{
+    width: 120px;
+}
+
+header .auth{
+    display: flex;
+    justify-content: end;
+    width: 40%;
+    align-items: center;
+}
+header .auth ul{
+    gap: 25px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+header .auth ul li a{
+    color: var(--main-color);
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: 17px;
+}
+header .auth ul li a img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+header .auth ul li a .input-group{
+    width: 200px;
+    position: relative;
+}
+header .auth ul li a .input-group input{
+    width: 100%;
+    padding: 12px 30px;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid rgb(207, 207, 207);
+}
+header .auth ul li a .input-group i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    color: gray;
+}
+    
+.hero-section{
+    height: 500px;
+    background-color: pink;
+}
+.hero-section .swiper {
+        width: 100%;
+        height: 100%;
+}
+
+.hero-section .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand{
+    display: flex;
+    padding-inline: 100px;
+}
+.brand .img{
+    width: calc(100%/7);
+}
+.brand .img img{
+    width: 100%;
+}
+.hero-section2{
+    height: 350px;
+}
+
+.section-text{
+    margin-block: 150px 30px;
+    font-family: var(--main-font);
+    padding-inline: 25px;
+    font-size: 50px;
+}
+.section-cart{
+    padding-inline: 25px;
+    display: flex;
+    gap: 8px;
+}
+.section-cart .cart{
+    height: 520px;
+    background-color: var(--bg-color);
+    width: 20%;
+}
+.section-cart .cart .img{
+    height: 83%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.section-cart .cart .img img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 400ms ease-in-out;
+}
+.section-cart .cart .img .img-front{
+    opacity: 1;
+    transform: scale(1);
+}
+.section-cart .cart .img .img-hover{
+    opacity: 0;
+    transform: scale(1.03);
+}
+.section-cart .cart .img:hover .img-front{
+    opacity: 0;
+    transform: scale(1.03);
+}
+.section-cart .cart .img:hover .img-hover{
+    opacity: 1;
+    transform: scale(1);
+}
+.section-cart .cart .info-cart{
+    height: 17%;
+    padding: 10px;
+    font-family: var(--main-font);
+}
+ .section-cart .cart .info-cart .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+ }
+.section-cart .cart .info-cart .des{
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+.section-cart .cart .info-cart .price{
+    color: red;
+}
+.section-cart .cart .info-cart .price span{
+    color: gray;
+    text-decoration: line-through;
+}
